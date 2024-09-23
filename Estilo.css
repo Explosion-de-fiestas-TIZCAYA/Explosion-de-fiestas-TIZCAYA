@@ -1,0 +1,105 @@
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Encabezado */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 2px -2px gray;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #333;
+}
+
+header p {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Sección de productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.producto img, .producto .slider img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.producto h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.producto p {
+    margin: 5px 0;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Estilos para el slider */
+.producto-slider .slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slider-img:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.producto-slider:hover .slider-img:first-child {
+    opacity: 0;
+}
+
+.producto-slider:hover .slider-img:not(:first-child) {
+    opacity: 1;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .productos {
+        padding: 10px;
+    }
+    
+    .producto {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: 100%;
+    }
+}
